@@ -15,8 +15,18 @@ router.get('/fetchOffers',(req,res) => {
            }
            else{
 
-            console.log('Hello connected');
-           }
+               const coll = client.db("CakeDb").collection("Offers");
+
+               coll.find({}).toArray((err,result) => {
+
+                output = result.map(r => ({'offer_image':r.offer_image}));
+
+                res.json(output);
+ 
+                client.close(); 
+            });
+               
+        }
     });
 });
 
