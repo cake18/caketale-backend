@@ -34,7 +34,7 @@ router.post('/login',(req,res) => {
                 }
                 if(user){
     
-                    res.json({message:'user exists'});
+                   res.json({message:user.name});
                 }
                 else{
                     res.json({message:'Phone number or password is incorrect'})
