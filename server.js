@@ -9,6 +9,7 @@ app.use(require('./routes/getChocMore'));
 app.use(require('./routes/register'));
 app.use(require('./routes/login'));
 app.use(require('./routes/getLimitCake'));
+app.use(require('./routes/cakeMore'));
 
 app.get('/',(req,res) => {
 
