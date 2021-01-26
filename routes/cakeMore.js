@@ -15,10 +15,11 @@ router.get('/cakeMore',(req,res) => {
          }
          else{
 
-            const coll = client.db("CakeDb").collection("CakeMore");
+            const coll = client.db("CakeDb").collection("Cakes");
             coll.find({}).toArray((err,result) => {
 
-                output = result.map(r => ({'imgurl':r.imgurl}));
+                output = result.map(r => ({'name':r.name,'imgurl':r.imgurl,'disprice':r.disprice,
+                'price':r.price,'weight':r.weight,'type':r.type}));
 
                 res.json(output);
             });
