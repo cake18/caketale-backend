@@ -18,7 +18,7 @@ router.get('/cakeMore',(req,res) => {
             const coll = client.db("CakeDb").collection("Cakes");
             coll.find({}).toArray((err,result) => {
 
-                output = result.map(r => ({'name':r.name,'imgurl':r.imgurl,'disprice':r.disprice,
+                output = result.map(r => ({'id':r._id,'name':r.name,'imgurl':r.imgurl,'disprice':r.disprice,
                 'price':r.price,'weight':r.weight,'type':r.type}));
 
                 res.json(output);
