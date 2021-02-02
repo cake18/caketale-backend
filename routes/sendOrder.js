@@ -9,7 +9,7 @@ const dburl = process.env.URL;
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
 
-router.get('/sendOrder',(req,res) => {
+router.post('/sendOrder',(req,res) => {
 
     console.log("Response",req.body);
 
