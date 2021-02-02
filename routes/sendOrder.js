@@ -11,7 +11,6 @@ router.use(bodyParser.urlencoded({extended:true}));
 
 router.post('/sendOrder',(req,res) => {
 
-    console.log("Response",req.body);
     MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
 
            if(err){
