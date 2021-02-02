@@ -19,7 +19,7 @@ router.post('/sendOrder',(req,res) => {
            }
            else{
                 const coll = client.db("CakeDb").collection("Orders");
-                coll.insertMany(req.body,(err,resp) => {
+                coll.insertMany([req.body],(err,resp) => {
 
                        if(err){
                            console.log("Error",err);
