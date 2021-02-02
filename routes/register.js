@@ -6,8 +6,8 @@ const dotEnv = require('dotenv').config();
 const sgMail = require('@sendgrid/mail');
 
 const dburl = process.env.URL;
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-sgMail.setSubstitutionWrappers("{{", "}}");
+// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+// sgMail.setSubstitutionWrappers("{{", "}}");
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
