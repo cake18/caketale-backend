@@ -6,6 +6,9 @@ const dotEnv = require('dotenv').config();
 
 const dburl = process.env.URL;
 
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({extended:true}));
+
 router.get('/sendOrder',(req,res) => {
 
     console.log("Response",req.body);
