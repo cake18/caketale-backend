@@ -15,7 +15,7 @@ router.get('/getLimitChoco',(req,res) => {
         }
         else{
 
-            const coll = client.db("CakeDb").collection("Chocolates");
+            const coll = client.db("CakeDb").collection("chocolates");
             coll.find({}).limit(2).toArray((err,result) => {
 
                 if(err){
