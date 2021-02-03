@@ -11,6 +11,7 @@ app.use(require('./routes/login'));
 app.use(require('./routes/getLimitCake'));
 app.use(require('./routes/cakeMore'));
 app.use(require('./routes/sendOrder'));
+app.use(require('./routes/getLimitChoco'));
 
 app.get('/',(req,res) => {
 
