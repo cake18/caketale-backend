@@ -12,8 +12,6 @@ const dburl = process.env.URL;
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:true}));
 
-const d = new Date();
-
 router.post('/register',(req,res) => {
 
     var data = {
@@ -22,9 +20,9 @@ router.post('/register',(req,res) => {
         phone:req.body.phone,
         email:req.body.email,
         dob:req.body.dob,
+        address:req.body.address,
+        city:req.body.city,
         password:req.body.password,
-        Joining_date:("0" + d.getDate() + "-" + (d.getMonth()+1) + "-" + d.getFullYear()),
-        Joining_time:d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
     };
 
     MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
